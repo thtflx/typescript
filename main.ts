@@ -12,8 +12,6 @@
 
 
 
-
-
 // Структура объектов.
 type TypeUser = {
     name: string
@@ -63,6 +61,8 @@ common2 = {
 let array: string[] // это значит массив из строк
 array = ['1', '2']
 
+
+
 // ---
 
 // const numbers: ReadonlyArray<number> = [0, 1, 2, 3]
@@ -102,6 +102,8 @@ function getChannel(name: string, age: number):TypeChannelReturn {
 getChannel('flx', 20)
 
 
+
+
 // --- (Как типизировать стрелочную функцию)
 const getChannelNameAndAge = (name: string, age: number): TypeChannelReturn => {
     return { name, age }
@@ -126,5 +128,3 @@ const getNumbers = (...numbers: number[]) => {
     return numbers
 }
 
-
-// TODO
