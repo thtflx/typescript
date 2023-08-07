@@ -245,7 +245,7 @@ type TypeAge = {
 
 type TypePerson = { // мы этим способом соединяем 2 типа.
     name: string
-    family: boolean
+    family: boolean 
 } & TypeAge
 
 const user1: TypePerson = {
