@@ -289,7 +289,7 @@ const user2: IPerson = {
     family: true,
     age: 24
 }  
-
+ 
 
 
 
