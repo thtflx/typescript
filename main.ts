@@ -288,7 +288,7 @@ const user2: IPerson = {
     name: 'Max',
     family: true,
     age: 24
-} 
+}  
 
 
 
