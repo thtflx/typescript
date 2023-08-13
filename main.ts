@@ -325,3 +325,10 @@ const user3: IUser1 = {
 
 
 console.log(EnumRoles[EnumRoles.ADMIN]); // получаем ключ (ADMIN) 
+
+
+
+
+
+
+// new
