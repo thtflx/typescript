@@ -1,13 +1,15 @@
+// --ThemeMap--
 // Базовые типы.
-// type: string // строка
-// type: number // числа
-// type: object // объекты
-// type: boolean // булевое значение
-// type: undefined // undefined
-// type: null // null
-// type: any // любой тип, но использовать крайне рекомендуется
-// type: unknown // неизвестно
-// type: void // пустота, обычное используется в функциях (callback)
+// Объекты, массивы и кортежи.
+// Функции.
+// Классы и типы.
+// Интерфейсы.
+// Типы vs Интерфейсы.
+// ENUM и его типы.
+// Утверждения (assertions)
+// Различные утилиты типов.
+// Декораторы.
+// Расширенные типы.
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -49,6 +51,14 @@ var common1 = __assign(__assign({}, user), address);
 // выше приведенный прмиер будет работать, но например у нас такой случай:
 var common2; // здесь мы проверяем на наличие объекта 
 common2 = __assign(__assign({}, user), address);
+var bmw = {
+    model: 'M5 F90',
+    color: 'white',
+    akmm: true,
+    aisrBaloon: true,
+    innerColor: 'brown'
+};
+console.log(bmw);
 // Массивы.
 var array; // это значит массив из строк
 array = ['1', '2'];
@@ -138,4 +148,5 @@ var user3 = {
     role: EnumRoles.ADMIN,
     color: 1 /* EnumColors.black */
 };
-console.log(EnumRoles[EnumRoles.ADMIN]);
+console.log(EnumRoles[EnumRoles.ADMIN]); // получаем ключ (ADMIN) 
+// new

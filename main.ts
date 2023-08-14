@@ -74,6 +74,31 @@ common2 = {
 
 
 
+type TypeCar = {
+    model: string
+    color: string
+} & TypeMotor & IView
+
+type TypeMotor = {
+    akmm: boolean
+    aisrBaloon: boolean
+}
+
+interface IView {
+    innerColor: string
+}
+
+
+const bmw: TypeCar = {
+    model: 'M5 F90',
+    color: 'white',
+    akmm: true,
+    aisrBaloon: true,
+    innerColor: 'brown'
+}
+
+console.log(bmw);
+
 
 
 // Массивы.
@@ -227,6 +252,8 @@ new Car('BMW', 135000).getName(); // BMW
 new Car('BMW', 135000).getInfo(); // не будет работать, так как private
 
 
+
+
 // Кроме этого ещё имеются три основных модификатора для классов. 
 // public - они по умолчанию публичные
 // private - функции будут доступны только этого КЛАССА, и мы не можем вызывать её вне КЛАССА
@@ -311,7 +338,7 @@ const enum EnumColors {
     green, 
     black,
     yellow
-}
+}   
 
 interface IUser1 {
     role: EnumRoles
@@ -331,4 +358,32 @@ console.log(EnumRoles[EnumRoles.ADMIN]); // получаем ключ (ADMIN)
 
 
 
-// new
+// Утверждения (Assertions).
+const inputElemet = document.querySelector('input');
+const value1 = (inputElemet as HTMLInputElement).value; // это
+const value2 = (<HTMLInputElement>inputElemet).value; // этот тоже вариант
+
+const getLength = (text: string | null) => {
+    return text!.length;
+}
+
+getLength('werger');
+getLength(null); // в целом это означает что значение не null или не undefined
+
+
+
+
+
+
+
+
+
+
+// Generic.
+// Это механизм, который позволяет создавать повторно используемый код, который работает с различными типами данных
+function entity<T>(args: T):T {
+    return args;
+}
+
+entity<number>(1);
+entity<string>('Bedolaga');
