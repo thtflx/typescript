@@ -391,8 +391,3 @@ entity<string>('Bedolaga');
 
 
 
-function add<X>(a: X, b: X):X {
-    return a + b;
-}
-
-add<X>(1, 2)
