@@ -387,3 +387,12 @@ function entity<T>(args: T):T {
 
 entity<number>(1);
 entity<string>('Bedolaga');
+
+
+
+
+function add<X>(a: X, b: X):X {
+    return a + b;
+}
+
+add<X>(1, 2)
