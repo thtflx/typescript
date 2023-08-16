@@ -9,7 +9,7 @@
 // Утверждения (assertions)
 // Различные утилиты типов.
 // Декораторы.
-// Расширенные типы.
+// Расширенные типы. 
 
 
 
@@ -381,7 +381,9 @@ getLength(null); // в целом это означает что значени�
 
 // Generic.
 // Это механизм, который позволяет создавать повторно используемый код, который работает с различными типами данных
-function entity<T>(args: T):T {
+
+// with function declaration
+function entity<T>(args: T):T { 
     return args;
 }
 
@@ -391,3 +393,125 @@ entity<string>('Bedolaga');
 
 
 
+
+// ---with function expression
+const entity2 = <T>(args: T):T => { 
+    return args;
+}
+
+entity2<number>(11);
+entity2<string>('Drip');
+
+
+
+
+
+
+// ---with CLASS
+class Channel<T> { // class
+    private name: T;
+
+    constructor(name: T) {
+        this.name = name;
+    }
+
+    getName():T {
+        return this.name
+    }
+}
+
+
+new Channel<string>('RED Group');
+new Channel<string>('RED Group');
+
+
+
+
+
+// ---with interface
+interface IPair<K, V> {
+    key: K
+    value: V
+}
+
+
+const pair1: IPair<string, number> = {
+    key: '1',
+    value: 1
+}
+
+const pair2: IPair<null, boolean> = {
+    key: null,
+    value: true
+}
+
+
+
+
+// example
+type TypeLength = {
+    length: number
+}
+
+function getNameLength<T extends TypeLength>(numv: T): number {
+    return numv.length;
+}
+
+
+getNameLength('wreghgan');
+getNameLength([0, 1, 2, 3]);
+
+
+
+
+
+
+
+
+
+
+
+
+// Утилиты типов (Pick, Omit, Partial).
+// Omit - вытаскивает все, кроме конкретно указанных*
+// Pick - вытаскиевает только один конкретно указанный*
+// Partial - делает поле не обязательным*
+// ReadOnly - только читабельна, изменить нельзя*
+// Record - добавляет варианты какого типа может быть свойства*
+
+
+interface ICar {
+    id: number
+    name: string
+    price: number
+    yearBuilt: number
+}
+
+interface ICarCreate extends Omit<ICar, 'id'> {}
+interface ICarId extends Pick<ICar, 'id'> {}
+interface IOptionalCar extends Partial<ICar> {}
+interface IReadOnlyCar extends Readonly<ICar> {}
+type TypeRecord = Record<'name' | 'price', string | number>
+
+
+const car: ICarCreate = { // Omit пример
+    name: 'Porsche',
+    price: 100000,
+    yearBuilt: 2023,
+}
+
+const carId: ICarId = { // Pick пример
+    id: 0
+}
+
+const carOpt: IOptionalCar = { // Partial пример, как видно поле стало НЕобязательным!
+    // можем так же оставить пустым, так как это не обязательно*
+}
+
+// const carReadOnly: ICarId = { // ReadOnly пример
+// }
+
+const carRecord: TypeRecord = { // по примеру понятно
+    name: 11,
+    price: '33',
+}
