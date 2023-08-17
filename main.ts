@@ -209,6 +209,7 @@ const car2 = getCar('BMW', 130000)
 
 
 
+
 // Классы и типы.
 class Car {
     name: string;
