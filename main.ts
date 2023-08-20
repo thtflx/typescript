@@ -543,7 +543,7 @@ function LogMethod(target: Object, key: string, descriptor: PropertyDescriptor) 
 }
 
 
-@LogClass
+@LogClass 
 class Plane {
     private id: number
 
