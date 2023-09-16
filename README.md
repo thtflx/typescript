@@ -1,2 +1,2 @@
 # typescript
-Typescript lessons.
+Typescript lessons tt.
